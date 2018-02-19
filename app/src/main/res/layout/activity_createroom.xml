@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE1D0">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context="info.androidhive.navigationdrawer.fragment.CreateRoomFragment">
+
+        <ImageView
+            android:id="@+id/showImg"
+            android:layout_width="0dp"
+            android:layout_height="147dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg_circle"
+            tools:layout_constraintTop_creator="1" />
+
+        <TextView
+            android:id="@+id/placetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="298dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="170dp"
+            android:text="สถานที่"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/showImg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/placeshow"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:textColor="#BF1616"
+            app:layout_constraintStart_toEndOf="@+id/placetext"
+            app:layout_constraintTop_toTopOf="@+id/placetext" />
+
+        <TextView
+            android:id="@+id/pricetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="ราคา"
+            android:textColor="#BF1616"
+            app:layout_constraintStart_toStartOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/placetext" />
+
+        <TextView
+            android:id="@+id/priceshow"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="28dp"
+            android:textColor="#BF1616"
+            app:layout_constraintStart_toEndOf="@+id/pricetext"
+            app:layout_constraintTop_toTopOf="@+id/pricetext" />
+
+        <TextView
+            android:id="@+id/datetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="วันที่"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toLeftOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/pricetext" />
+
+        <TextView
+            android:id="@+id/selectdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:text="เลือกวันที่"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintStart_toEndOf="@+id/datetext"
+            app:layout_constraintTop_toTopOf="@+id/datetext" />
+
+        <TextView
+            android:id="@+id/timetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="เวลา"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toLeftOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/datetext" />
+
+        <TextView
+            android:id="@+id/selecttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:text="เลือกเวลา"
+            android:textColor="#BF1616"
+            app:layout_constraintStart_toEndOf="@+id/timetext"
+            app:layout_constraintTop_toTopOf="@+id/timetext" />
+
+        <TextView
+            android:id="@+id/peopletext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="จำนวนคน"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/timetext" />
+
+        <Spinner
+            android:id="@+id/selectpeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#BF1616"
+            app:layout_constraintBottom_toBottomOf="@+id/peopletext"
+            app:layout_constraintStart_toEndOf="@+id/peopletext"
+            app:layout_constraintTop_toTopOf="@+id/peopletext" />
+
+        <TextView
+            android:id="@+id/tips3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="(เวลานัดพบ)"
+            android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Line2"
+            android:textColor="#FF837E"
+            app:layout_constraintStart_toEndOf="@+id/selecttime"
+            app:layout_constraintTop_toTopOf="@+id/selecttime" />
+
+        <TextView
+            android:id="@+id/tips4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="(วันที่นัดพบ)"
+            android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Line2"
+            android:textColor="#FF837E"
+            app:layout_constraintStart_toEndOf="@+id/selectdate"
+            app:layout_constraintTop_toTopOf="@+id/selectdate" />
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(รวมผู้สร้างกลุ่ม)"
+            android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Line2"
+            android:textColor="#FF837E"
+            app:layout_constraintStart_toEndOf="@+id/selectpeople"
+            app:layout_constraintTop_toTopOf="@+id/peopletext" />
+
+        <TextView
+            android:id="@+id/extratext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="เพิ่มเติม"
+            android:textColor="#BF1616"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toLeftOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/peopletext" />
+
+        <TextView
+            android:id="@+id/tips2"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="20dp"
+            android:text="(ใส่ช่องทางการติดต่อ/อาหารที่แพ้)"
+            android:textColor="#FF837E"
+            android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Line2"
+            app:layout_constraintStart_toEndOf="@+id/extratext"
+            app:layout_constraintTop_toTopOf="@+id/extratext" />
+
+        <EditText
+            android:id="@+id/extraedittext"
+            android:layout_width="329dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/editbackground"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:textColor="#BF1616"
+            app:layout_constraintStart_toStartOf="@+id/placetext"
+            app:layout_constraintTop_toBottomOf="@+id/extratext" />
+
+        <Button
+            android:id="@+id/createbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FF4242"
+            android:layout_marginTop="20dp"
+            android:text="สร้าง"
+            android:textColor="#FFE1D0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/extraedittext"
+            app:layout_constraintTop_toBottomOf="@+id/extraedittext"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/cancelbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="152dp"
+            android:background="#FF4242"
+            android:text="ยกเลิก"
+            android:textColor="#FFE1D0"
+            app:layout_constraintBottom_toBottomOf="@+id/createbutton"
+            app:layout_constraintLeft_toRightOf="@+id/createbutton"
+            app:layout_constraintTop_toTopOf="@+id/createbutton"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintBottom_creator="1" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
