@@ -246,5 +246,23 @@ class DB_Functions {
 	return $array;
 	
 	}
+	
+	
+	public function insertRoom($pro_id,$user_header,$title,$des,$people_max,$t_start) {
+						
+						
+		$stmt = $this->conn->prepare("INSERT INTO room(pro_id,user_header,`title`,`des`,people_max,`t_start`) VALUES(?,(SELECT user_id AS user_header FROM consumer WHERE email = ?),?,?,?,(SELECT STR_TO_DATE(?,'%Y-%m-%dT%H:%i')));");
+		
+        $stmt->bind_param("isssis", $pro_id,$user_header,$title,$des,$people_max,$t_start);		
+				          
+			 if ($stmt->execute()) {
+            $user = $stmt->insert_id;		
+            $stmt->close();
+			return $user;
+			 } else {
+				return false;
+			 }       
+	
+}
 }
 ?>
