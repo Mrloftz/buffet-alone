@@ -32,6 +32,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 	private static final String KEY_ID = "id";
 	private static final String KEY_NAME = "name";
 	private static final String KEY_EMAIL = "email";
+	private static final String TITLE = "title";
 	//private static final String KEY_UID = "uid";
 	//private static final String KEY_CREATED_AT = "created_at";
 
@@ -44,9 +45,11 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		String CREATE_LOGIN_TABLE = "CREATE TABLE " + TABLE_USER + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-				+ KEY_EMAIL + ")";
-		db.execSQL(CREATE_LOGIN_TABLE);
+				+ KEY_EMAIL + "," + TITLE + " TEXT"+")";
 
+
+
+		db.execSQL(CREATE_LOGIN_TABLE);
 		Log.d(TAG, "Database tables created");
 	}
 
@@ -98,7 +101,6 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 		}
 
 		Log.d(TAG, "getDetails name " + user.get("name"));
-
 		Log.d(TAG, "getDetails email " + user.get("email"));
 		cursor.close();
 		db.close();
@@ -119,5 +121,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
 		Log.d(TAG, "Deleted all user info from sqlite");
 	}
+
+
 
 }

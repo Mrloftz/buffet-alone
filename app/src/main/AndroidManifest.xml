@@ -29,7 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CreateroomActivity"></activity>
+        <activity android:name=".activity.CreateroomActivity" />
+        <activity android:name=".activity.RoomDetail" />
+        <activity android:name=".activity.TEST" />
+        <activity android:name=".activity.ShowlistCosumer"></activity>
     </application>
 
 </manifest>

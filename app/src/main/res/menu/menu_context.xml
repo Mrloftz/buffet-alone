@@ -6,8 +6,8 @@
         android:title="Creat Room" />
     <item
         android:id="@+id/action_watch"
-        android:title="TEST" />
+        android:title="." />
     <item
         android:id="@+id/action_book"
-        android:title="TEST"/>
+        android:title="."/>
 </menu>

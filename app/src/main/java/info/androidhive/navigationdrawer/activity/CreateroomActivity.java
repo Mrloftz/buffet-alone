@@ -46,8 +46,6 @@ public class CreateroomActivity extends AppCompatActivity {
     RequestQueue requestQueue;
     String url ="http://192.168.45.2/loft/insertroom.php";
 
-
-
     private static final String TAG = "Creategroup";
     //<ประกาศตัวแปร
     private TextView mDisplayDate;
@@ -126,7 +124,9 @@ public class CreateroomActivity extends AppCompatActivity {
         Button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
                 create_room();
+                startActivity(myIntent);
             }
         });
         //<ส่วนของการเลือกเวลา
@@ -248,11 +248,10 @@ public class CreateroomActivity extends AppCompatActivity {
 
                     placeshow.setText(object.getString("location"));
                     priceshow.setText(object.getString("type_name"));
-                    Glide.with(getApplication()).load(object.getString("image")).into(showImg);
+                    Glide.with(getApplicationContext()).load(object.getString("image")).into(showImg);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.d("JSON error" , "kuy");
 
                 }
 

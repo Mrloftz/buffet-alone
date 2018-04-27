@@ -30,7 +30,6 @@ import info.androidhive.navigationdrawer.R;
 import info.androidhive.navigationdrawer.fragment.FindPartyFragment;
 import info.androidhive.navigationdrawer.fragment.HomeFragment;
 import info.androidhive.navigationdrawer.fragment.JoinedRoomFragment;
-import info.androidhive.navigationdrawer.fragment.NotificationsFragment;
 import info.androidhive.navigationdrawer.fragment.ProfileFragment;
 import info.androidhive.navigationdrawer.fragment.PromotionFragment;
 import info.androidhive.navigationdrawer.fragment.SettingsFragment;
@@ -67,7 +66,6 @@ public class MainActivity extends AppCompatActivity  {
     private static final String TAG_FINDPARTY = "findparty";
     private static final String TAG_CREATEROOM = "createroom";
     private static final String TAG_JOINEDROOM = "joinedroom";
-    private static final String TAG_NOTIFICATIONS = "notifications";
     private static final String TAG_PROFILE = "profile";
     private static final String TAG_SETTINGS = "settings";
     public static String CURRENT_TAG = TAG_HOME;
@@ -250,14 +248,10 @@ public class MainActivity extends AppCompatActivity  {
                 JoinedRoomFragment joinedroomFragment = new JoinedRoomFragment();
                 return joinedroomFragment;
             case 4:
-                // notifications fragment
-                NotificationsFragment notificationsFragment = new NotificationsFragment();
-                return notificationsFragment;
-            case 5:
                 //profile
                 ProfileFragment profileFragment = new ProfileFragment();
                 return profileFragment;
-            case 6:
+            case 5:
                 // settings fragment
                 SettingsFragment settingsFragment = new SettingsFragment();
                 return settingsFragment;
@@ -297,7 +291,7 @@ public class MainActivity extends AppCompatActivity  {
                         navItemIndex = 2;
                         CURRENT_TAG = TAG_FINDPARTY;
                         break;
-//                    case R.id.nav_createroom:
+//                  case R.id.nav_createroom:
 //                        navItemIndex = 3;
 //                        CURRENT_TAG = TAG_CREATEROOM;
 //                        break;
@@ -305,16 +299,12 @@ public class MainActivity extends AppCompatActivity  {
                         navItemIndex = 3;
                         CURRENT_TAG = TAG_JOINEDROOM;
                         break;
-                    case R.id.nav_notifications:
-                        navItemIndex = 4;
-                        CURRENT_TAG = TAG_NOTIFICATIONS;
-                        break;
                     case R.id.nav_profile:
-                        navItemIndex = 5;
+                        navItemIndex = 4;
                         CURRENT_TAG = TAG_PROFILE;
                         break;
                     case R.id.nav_settings:
-                        navItemIndex = 6;
+                        navItemIndex = 5;
                         CURRENT_TAG = TAG_SETTINGS;
                         break;
                     case R.id.nav_about_us:

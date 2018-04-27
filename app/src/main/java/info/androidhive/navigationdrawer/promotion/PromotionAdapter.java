@@ -98,14 +98,13 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
             switch (menuItem.getItemId()) {
                 case R.id.action_favourite:
 
-                    Toast.makeText(context, listPromotions.get(pos).getpro()+" Create Room !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, listPromotions.get(pos).getpro() + " Create Room !", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(context, CreateroomActivity.class);
-                    i.putExtra("pro_id",listPromotions.get(pos).getpro());
+                    i.putExtra("pro_id", listPromotions.get(pos).getpro());
 
                     context.startActivity(i);
-
                     return true;
-                case R.id.action_watch:
+               case R.id.action_watch:
                     Toast.makeText(context, listPromotions.get(pos).getPromotionName()+" is added to watchlist", Toast.LENGTH_SHORT).show();
                     return true;
                 case R.id.action_book:

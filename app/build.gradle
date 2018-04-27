@@ -41,6 +41,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:gridlayout-v7:25.3.1'
     compile 'com.ssomai:android.scalablelayout:2.1.6'
-
+    compile 'com.squareup.picasso:picasso:2.5.2'
     testCompile 'junit:junit:4.12'
 }

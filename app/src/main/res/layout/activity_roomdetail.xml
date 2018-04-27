@@ -5,18 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFE1D0">
+    android:background="#FAF031">
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFE1D0"
+        android:background="#FAF031"
         tools:context="info.androidhive.navigationdrawer.fragment.JoinedRoomFragment">
 
         <TextView
-            android:id="@+id/groupidtext"
+            android:id="@+id/detailroomidtext"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="เลขที่กลุ่ม"
@@ -25,14 +25,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/groupidshow"
+            android:id="@+id/detailroomidshow"
             android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_marginBottom="16dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:textColor="#BF1616"
             app:layout_constraintBottom_toBottomOf="@+id/groupidtext"
-            app:layout_constraintStart_toEndOf="@+id/groupidtext" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintStart_toEndOf="@+id/detailroomidtext" />
 
         <ImageView
             android:id="@+id/showimg"
@@ -132,7 +135,6 @@
             android:id="@+id/datetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="วันที่"
             android:textColor="#BF1616"
             android:textSize="15dp"
@@ -172,7 +174,7 @@
             android:id="@+id/extratext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="48dp"
             android:text="เพิ่มเติม"
             android:textColor="#BF1616"
             android:textSize="15dp"
@@ -183,7 +185,6 @@
             android:id="@+id/extrashow"
             android:layout_width="280dp"
             android:layout_height="58dp"
-            android:layout_marginStart="24dp"
             android:background="@drawable/editbackground"
             android:textColor="#BF1616"
             app:layout_constraintStart_toEndOf="@+id/extratext"
@@ -194,27 +195,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="136dp"
+            android:layout_marginTop="20dp"
             android:background="#FF4242"
-            android:text="แสดงรายชื่อ"
+            android:text="เข้าร่วมห้อง"
             android:textColor="#FFE1D0"
             app:layout_constraintStart_toStartOf="@+id/detailtext"
             app:layout_constraintTop_toBottomOf="@+id/extrashow" />
-
-
-        <Button
-            android:id="@+id/leavebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="#FF4242"
-            android:text="ออกจากกลุ่ม"
-            android:textColor="#FFE1D0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.521"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/listuserbutton" />
 
 
     </android.support.constraint.ConstraintLayout>

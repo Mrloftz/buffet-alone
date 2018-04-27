@@ -90,10 +90,25 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+            img_2.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+
+            }
+        });
+
         img_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ProfileFragment fragment2 = new ProfileFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction =        fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame, fragment2);
+                fragmentTransaction.disallowAddToBackStack();
+                fragmentTransaction.commit();
 
             }
         });

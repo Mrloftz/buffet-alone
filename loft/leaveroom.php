@@ -8,11 +8,11 @@
 require_once 'include/DB_Functions.php';
 $db = new DB_Functions();
 
-// json response array
-		$title = $_POST['title'];
-        $result = $db->getDetailRoom($title);	
+
+    $email = $_POST['email'];
+		
+        $result = $db->leaveRoom($email);	
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		
-
 ?>
 
