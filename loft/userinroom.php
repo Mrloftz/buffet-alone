@@ -11,7 +11,7 @@ $db = new DB_Functions();
 
     $roomid = $_POST['roomid'];
 		
-        $result = $db->getMyUserInRoom($roomid);	
+        $result = $db->getuserinroom($roomid);	
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		
 ?>

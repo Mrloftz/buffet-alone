@@ -132,7 +132,7 @@ public class PromotionFragment extends Fragment {
                 click = position;
 
                 if(click == 0){
-                    Log.d("au test" , "0");
+                    Log.d("rob test" , "0");
                     getdata_spinner_value(AppConfig.URL_PRICE_TYPE);
                     spin_value.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override

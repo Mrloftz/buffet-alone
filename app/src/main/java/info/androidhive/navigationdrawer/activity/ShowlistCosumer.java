@@ -46,7 +46,7 @@ public class ShowlistCosumer extends AppCompatActivity {
     public void SetListConsument (final String room_id){
         // Tag used to cancel the request
         String tag_string_pro = "buffet tag";
-        String url = "http://192.168.45.2/loft/userinroom.php";
+        String url = "http://robbanaz.000webhostapp.com/userinroom.php";
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
 

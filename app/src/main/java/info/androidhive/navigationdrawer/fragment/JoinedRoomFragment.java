@@ -115,7 +115,7 @@ public class JoinedRoomFragment extends Fragment {
         leavebutton = (Button) v.findViewById(R.id.leavebutton);
 
         sqlite_email = users.get("email").toString();
-        getMyJoinedRoom("http://192.168.45.2/loft/getMyJoinedRoom.php",sqlite_email);
+        getMyJoinedRoom("http://robbanaz.000webhostapp.com/getMyJoinedRoom.php",sqlite_email);
 
         listuserbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -251,7 +251,7 @@ public class JoinedRoomFragment extends Fragment {
     public void leaveRoom(final String email){
         // Tag used to cancel the request
         String tag_string_pro = "buffet tag";
-        String url = "http://192.168.45.2/loft/leaveroom.php";
+        String url = "http://robbanaz.000webhostapp.com/leaveroom.php";
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
 

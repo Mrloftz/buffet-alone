@@ -34,7 +34,7 @@ public class TEST extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("http://192.168.45.2/loft/list_room.php");
+                new ReadJSON().execute("http://robbanaz.000webhostapp.com/list_room.php");
             }
         });
     }

@@ -9,8 +9,8 @@ require_once 'include/DB_Functions.php';
 $db = new DB_Functions();
 
 // json response array
-		$title = $_POST['title'];
-        $result = $db->getDetailRoom($title);	
+		$roomid = $_POST['roomid'];
+        $result = $db->getdetail_room($roomid);	
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		
 

@@ -44,7 +44,7 @@ import info.androidhive.navigationdrawer.helper.SQLiteHandler;
 
 public class CreateroomActivity extends AppCompatActivity {
     RequestQueue requestQueue;
-    String url ="http://192.168.45.2/loft/insertroom.php";
+    String url ="http://robbanaz.000webhostapp.com/insertroom.php";
 
     private static final String TAG = "Creategroup";
     //<ประกาศตัวแปร
@@ -175,7 +175,7 @@ public class CreateroomActivity extends AppCompatActivity {
         sqlite_email = users.get("email").toString();
         //pro = Integer.parseInt(pro_id);
         //
-        getpro(pro_id,"http://192.168.45.2/loft/getpro.php");
+        getpro(pro_id,"http://robbanaz.000webhostapp.com/getpro.php");
     }
 
     public Dialog onCreateDialog(CreateroomActivity savedInstanceState) {

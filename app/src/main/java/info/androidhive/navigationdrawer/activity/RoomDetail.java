@@ -44,7 +44,7 @@ public class RoomDetail extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         title = bundle.getString("title");
-        Log.d("rattanapol" , title);
+        Log.d("robbanaz" , title);
 
         db = new SQLiteHandler(this);
         HashMap<String, String> users = db.getUserDetails();
@@ -60,7 +60,7 @@ public class RoomDetail extends AppCompatActivity {
         showImg = (ImageView) findViewById(R.id.showimg);
         btn = (Button) findViewById(R.id.listuserbutton);
 
-        getDetailRoom(title , "http://192.168.45.2/loft/get_detail_room.php");
+        getDetailRoom(title , "http://robbanaz.000webhostapp.com/get_detail_room.php");
 
         sqlite_email = users.get("email").toString();
         btn.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +83,7 @@ public class RoomDetail extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Log.d("rattanapol", response.toString());
+                Log.d("Robbanaz", response.toString());
 
                 try {
                     Log.d("AAA" , "DONE");
@@ -121,7 +121,7 @@ public class RoomDetail extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
 
             public void onErrorResponse(VolleyError error) {
-                Log.e("au", "Profile Error: " + error.getMessage());
+                Log.e("to", "Profile Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
             }
@@ -143,7 +143,7 @@ public class RoomDetail extends AppCompatActivity {
     }
 
     public void joinRoom(final String room_id , final String email){
-        String url ="http://192.168.45.2/loft/UserJoinToRoom.php";
+        String url ="http://robbanaz.000webhostapp.com/UserJoinToRoom.php";
 
         // Tag used to cancel the request
         String tag_string_pro = "buffet tag";

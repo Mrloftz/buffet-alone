@@ -104,12 +104,12 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
 
                     context.startActivity(i);
                     return true;
-               case R.id.action_watch:
-                    Toast.makeText(context, listPromotions.get(pos).getPromotionName()+" is added to watchlist", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.action_book:
-                    Toast.makeText(context, "Booked Ticket for "+ listPromotions.get(pos).getPromotionName(), Toast.LENGTH_SHORT).show();
-                    return true;
+//               case R.id.action_watch:
+//                    Toast.makeText(context, listPromotions.get(pos).getPromotionName()+" is added to watchlist", Toast.LENGTH_SHORT).show();
+//                    return true;
+//                case R.id.action_book:
+//                    Toast.makeText(context, "Booked Ticket for "+ listPromotions.get(pos).getPromotionName(), Toast.LENGTH_SHORT).show();
+//                    return true;
                 default:
             }
             return false;

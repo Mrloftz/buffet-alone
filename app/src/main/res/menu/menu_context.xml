@@ -4,10 +4,5 @@
     <item
         android:id="@+id/action_favourite"
         android:title="Creat Room" />
-    <item
-        android:id="@+id/action_watch"
-        android:title="." />
-    <item
-        android:id="@+id/action_book"
-        android:title="."/>
+
 </menu>
