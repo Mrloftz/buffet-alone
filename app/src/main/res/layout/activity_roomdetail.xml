@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FAF031"
-        tools:context="info.androidhive.navigationdrawer.fragment.JoinedRoomFragment">
+        tools:context="info.androidhive.buffet_alone.fragment.JoinedRoomFragment">
 
         <TextView
             android:id="@+id/detailroomidtext"

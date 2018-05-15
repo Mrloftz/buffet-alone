@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.androidhive.navigationdrawer">
+    package="info.androidhive.buffet_alone">
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".app.AppController"
+        android:name="info.androidhive.buffet_alone.app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="info.androidhive.buffet_alone.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.AboutUsActivity"
+            android:name="info.androidhive.buffet_alone.activity.AboutUsActivity"
             android:label="@string/activity_title_about_us" />
         <activity
-            android:name=".activity.PrivacyPolicyActivity"
+            android:name="info.androidhive.buffet_alone.activity.PrivacyPolicyActivity"
             android:label="@string/activity_title_privacy_policy" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.LoginActivity">
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.RegisterActivity" />
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CreateroomActivity" />
-        <activity android:name=".activity.RoomDetail" />
-        <activity android:name=".activity.TEST" />
-        <activity android:name=".activity.ShowlistCosumer"></activity>
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.CreateroomActivity" />
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.RoomDetail" />
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.TEST" />
+        <activity
+            android:name="info.androidhive.buffet_alone.activity.ShowlistCosumer">
+
+        </activity>
     </application>
 
 </manifest>

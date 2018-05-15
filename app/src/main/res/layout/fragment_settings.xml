@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_register"
-    tools:context="info.androidhive.navigationdrawer.fragment.SettingsFragment">
+    tools:context="info.androidhive.buffet_alone.fragment.SettingsFragment">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
