@@ -56,7 +56,7 @@ public class JoinedRoomFragment extends Fragment {
 
     TextView txt_detail , txt_place , txt_start , txt_end , txt_extra , txt_room , txt_title , textViewPrice;
     ImageView showImg;
-    Button listuserbutton , leavebutton;
+    Button listuserbutton , leavebutton, deleteroom;
 
     String rood_id;
     private OnFragmentInteractionListener mListener;
@@ -113,6 +113,9 @@ public class JoinedRoomFragment extends Fragment {
         showImg = (ImageView) v.findViewById(R.id.showimg);
         listuserbutton = (Button) v.findViewById(R.id.listuserbutton);
         leavebutton = (Button) v.findViewById(R.id.leavebutton);
+        deleteroom = (Button) v.findViewById(R.id.deleteroom);
+
+
 
         sqlite_email = users.get("email").toString();
         getMyJoinedRoom("http://robbanaz.000webhostapp.com/getMyJoinedRoom.php",sqlite_email);
@@ -134,6 +137,19 @@ public class JoinedRoomFragment extends Fragment {
                 startActivity(myIntent);
             }
         });
+
+
+        deleteroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DeleteRoom(rood_id);
+
+            }
+        });
+
+
+
 
 
         return v;
@@ -285,4 +301,44 @@ public class JoinedRoomFragment extends Fragment {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_pro);
     }
+
+
+    public void DeleteRoom(final String room_id){
+        // Tag used to cancel the request
+        String tag_string_pro = "buffet tag";
+        String url = "http://robbanaz.000webhostapp.com/deleteroom.php";
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d("AA", response.toString());
+
+                Log.d("DELETE" , "DONE");
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Profile Error: " + error.getMessage());
+                Toast.makeText(getContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to register url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("roomid", room_id);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_pro);
+    }
+
 }

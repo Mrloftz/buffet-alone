@@ -27,4 +27,7 @@ public class AppConfig {
 	public static String URL_GET_PRO = "http://robbanaz.000webhostapp.com/getpro.php";
 	/// Server list_room
 
+	public static String URL_Deleteroom = "http://robbanaz.000webhostapp.com/deleteroom.php";
+	/// Sever delete room
+
 }

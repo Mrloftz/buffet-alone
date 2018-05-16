@@ -216,6 +216,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listuserbutton" />
 
+        <Button
+            android:id="@+id/deleteroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="56dp"
+            android:text="ลบห้อง"
+            android:background="#FF4242"
+            android:textColor="#FFE1D0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.392"
+            app:layout_constraintStart_toEndOf="@+id/leavebutton"
+            app:layout_constraintTop_toBottomOf="@+id/extrashow" />
+
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

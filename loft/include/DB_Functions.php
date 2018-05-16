@@ -233,7 +233,7 @@ class DB_Functions {
 	
 	
 	public function getpro_from_proid($pro_id){
-	$sql= "SELECT * FROM promotion p JOIN type_price tp on p.type_price = tp.tpye_id WHERE p.pro_id = $pro_id";
+	$sql= "SELECT * FROM promotion p, type_price tp WHERE p.pro_id = $pro_id";
 	$result = mysqli_query( $this->conn ,$sql);
 	
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -246,100 +246,5 @@ class DB_Functions {
 	return $array;
 	
 	}
-	
-	
-	public function insertRoom($pro_id,$user_header,$title,$des,$people_max,$t_start) {
-						
-						
-		$stmt = $this->conn->prepare("INSERT INTO room(pro_id,user_header,`title`,`des`,people_max,`t_start`) VALUES(?,(SELECT user_id AS user_header FROM consumer WHERE email = ?),?,?,?,(SELECT STR_TO_DATE(?,'%Y-%m-%dT%H:%i')));");
-		
-        $stmt->bind_param("isssis", $pro_id,$user_header,$title,$des,$people_max,$t_start);		
-				          
-			 if ($stmt->execute()) {
-            $user = $stmt->insert_id;		
-            $stmt->close();
-			return $user;
-			 } else {
-				return false;
-			 }       
-	
-	}
-	
-	public function getMyJoinedRoom ($email){
-								
-		$sql= "SELECT room.room_id , CONVERT(promotion.image,CHAR(300)) AS image , room.title , type_price.type_name , promotion.des AS pro_des , promotion.location ,date(room.t_start) AS date , TIME(room.t_start) AS time , room.des AS room_des FROM list_consumer INNER JOIN room ON list_consumer.room_id = room.room_id INNER JOIN promotion ON room.pro_id = promotion.pro_id INNER JOIN type_price ON promotion.type_price = type_price.tpye_id WHERE list_consumer.user_id = (SELECT user_id FROM consumer WHERE email = '$email') ORDER BY room.room_id DESC LIMIT 1";
-		$result = mysqli_query( $this->conn ,$sql);
-	
-		while ($row = mysqli_fetch_assoc($result)) {
-		
-			$array[] = $row;
-	
-		
-		}
-	
-		return $array;
-	}
-	
-	public function getDetailRoom ($title){
-		$sql = "SELECT room.room_id,room.title ,promotion.image, type_price.type_name ,promotion.des AS pro_des , promotion.location  , room.des AS room_des , date(room.t_start) AS date ,  time(room.t_start) AS time  from room JOIN promotion on promotion.pro_id = room.pro_id JOIN type_price on type_price.tpye_id = promotion.type_price where room.title = '$title'";
-		
-		$result = mysqli_query( $this->conn ,$sql);
-		while ($row = mysqli_fetch_assoc($result)) {
-		
-			$array[] = $row;
-	
-		
-		}
-	
-		return $array;
-		
-	}
-	
-	public function UserJoinToRoom ($roomid , $email){
-				
-		$stmt = $this->conn->prepare("INSERT INTO list_consumer (room_id , user_id , ts) VALUES (?,(SELECT user_id FROM consumer WHERE email = ? ) ,NOW());");
-		
-		$stmt->bind_param("is", $roomid,$email);		
-				          
-		if ($stmt->execute()) {
-            $user = $stmt->insert_id;		
-            $stmt->close();
-			return $user;
-		} else {
-			return false;
-		}  
-		
-	}
-	
-	public function getMyUserInRoom ($room_id){
-		$sql = "SELECT consumer.fname , consumer.age  from list_consumer JOIN consumer on list_consumer.user_id = consumer.user_id Where list_consumer.room_id = $room_id";
-		
-		$result = mysqli_query( $this->conn ,$sql);
-		while ($row = mysqli_fetch_assoc($result)) {
-		
-			$array[] = $row;
-	
-		
-		}
-	
-		return $array;
-		
-	}
-	
-	public function leaveRoom ($email){
-		$stmt = $this->conn->prepare("DELETE FROM list_consumer WHERE user_id = (SELECT user_id FROM consumer WHERE email = ? );");
-		$stmt->bind_param("s", $email);	
-		
-		if ($stmt->execute()) {
-            $user = $stmt->insert_id;		
-            $stmt->close();
-			return $user;
-		} else {
-			return false;
-		}  
-		
-	}
-	
-		
 }
 ?>
